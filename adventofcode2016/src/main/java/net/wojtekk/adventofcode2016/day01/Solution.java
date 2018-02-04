@@ -35,6 +35,7 @@ public class Solution {
         Direction direction = Direction.NORTH;
         Point position = new Point(0, 0);
         List<Move> moves = getMoves(fileName);
+
         List<Point> positions = new LinkedList<>();
         positions.add(position);
 
@@ -65,10 +66,8 @@ public class Solution {
     }
 
     private String readFile(String fileName) throws IOException {
-        String file = Main.class.getClassLoader().getResource(fileName).getPath();
-        Path path = Paths.get(file);
+        Path path = Paths.get(getClass().getClassLoader().getResource(fileName).getPath());
 
-        return Files.readAllLines(path).stream()
-                .collect(Collectors.joining());
+        return new String(Files.readAllBytes(path));
     }
 }
