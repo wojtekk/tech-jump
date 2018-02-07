@@ -37,8 +37,8 @@ public class Solution {
     }
 
     System.out.println("Part 1");
-    System.out.println("Point: " + res.x + ", " + res.y);
-    System.out.println("Distance: " + (Math.abs(res.x) + Math.abs(res.y)));
+    System.out.println("Point: " + position.x + ", " + position.y);
+    System.out.println("Distance: " + (Math.abs(position.x) + Math.abs(position.y)));
   }
 
   public void part2(String fileName) throws IOException {
