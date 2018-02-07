@@ -15,4 +15,16 @@ public enum Direction {
 
         return Direction.values()[dir];
     }
+
+    public Direction rotate(Rotation rotation) {
+        int dir = this.ordinal();
+        if (rotation == Rotation.LEFT) {
+            dir = (NUM_OF_DIRECTIONS + dir - 1) % NUM_OF_DIRECTIONS;
+        } else {
+            dir = (NUM_OF_DIRECTIONS + dir + 1) % NUM_OF_DIRECTIONS;
+        }
+
+        return Direction.values()[dir];
+    }
+
 }

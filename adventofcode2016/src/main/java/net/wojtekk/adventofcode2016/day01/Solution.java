@@ -24,6 +24,7 @@ public class Solution {
         for (Move move : moves) {
             direction = Direction.rotate(direction, move.direction);
             position = Point.add(position, Point.multiply(steps.get(direction), move.steps));
+            //position = position.add(steps.get(direction).multiply(move.steps));
         }
 
         System.out.println("Part 1");
@@ -44,6 +45,7 @@ public class Solution {
             direction = Direction.rotate(direction, move.direction);
             for (int s = 0; s < move.steps; s++) {
                 position = Point.add(position, steps.get(direction));
+                //position = position.add(steps.get(direction));
                 if (positions.contains(position)) {
                     break OUTER_LOOP;
                 }
@@ -60,11 +62,12 @@ public class Solution {
         String data = readFile(fileName);
 
         return Arrays.stream(data.split(","))
-                .map(move -> move.trim())
+                .map(String::trim)
                 .map(move -> new Move(move.substring(0, 1), move.substring(1)))
                 .collect(Collectors.toList());
     }
 
+    @SuppressWarnings("ConstantConditions")
     private String readFile(String fileName) throws IOException {
         Path path = Paths.get(getClass().getClassLoader().getResource(fileName).getPath());
 

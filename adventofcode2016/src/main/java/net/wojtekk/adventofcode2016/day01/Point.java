@@ -20,6 +20,16 @@ class Point {
         return new Point(a.x * b, a.y * b);
     }
 
+    public Point add(Point other) {
+        Objects.requireNonNull(other);
+        return new Point(x + other.x, y + other.y);
+    }
+
+    public Point multiply(Integer multiplier) {
+        Objects.requireNonNull(multiplier);
+        return new Point(x * multiplier, y * multiplier);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this) return true;
