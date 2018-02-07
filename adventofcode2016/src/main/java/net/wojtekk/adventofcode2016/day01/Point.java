@@ -12,12 +12,12 @@ class Point {
         this.y = y;
     }
 
-    public static Point add(Point a, Point b) {
-        return new Point(a.x + b.x, a.y + b.y);
+    public Point add(Point other) {
+        return new Point(this.x + other.x, this.y + other.y);
     }
 
-    public static Point multiply(Point a, int b) {
-        return new Point(a.x * b, a.y * b);
+    public Point multiply(int value) {
+        return new Point(this.x * value, this.y * value);
     }
 
     @Override

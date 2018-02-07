@@ -5,8 +5,8 @@ public enum Direction {
 
     private static int NUM_OF_DIRECTIONS = 4;
 
-    public static Direction rotate(Direction direction, Rotation rotation) {
-        int dir = direction.ordinal();
+    public Direction rotate(Rotation rotation) {
+        int dir = this.ordinal();
         if (rotation == Rotation.LEFT) {
             dir = (NUM_OF_DIRECTIONS + dir - 1) % NUM_OF_DIRECTIONS;
         } else {
