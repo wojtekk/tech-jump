@@ -24,14 +24,21 @@ public class Solution {
     Point position = new Point(0, 0);
     List<Move> moves = getMoves(fileName);
 
+//    Point res = moves.stream()
+//      .reduce(
+//        position,
+//        (p, move) -> p.add(steps.get(direction.rotate(move.direction)).multiply(move.steps)),
+//        (a, b) -> a
+//      );
+
     for (Move move : moves) {
       direction = direction.rotate(move.direction);
       position = position.add(steps.get(direction).multiply(move.steps));
     }
 
     System.out.println("Part 1");
-    System.out.println("Point: " + position.x + ", " + position.y);
-    System.out.println("Distance: " + (Math.abs(position.x) + Math.abs(position.y)));
+    System.out.println("Point: " + res.x + ", " + res.y);
+    System.out.println("Distance: " + (Math.abs(res.x) + Math.abs(res.y)));
   }
 
   public void part2(String fileName) throws IOException {
