@@ -5,6 +5,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.function.BiConsumer;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
+import java.util.function.Supplier;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import static java.util.Map.entry;
@@ -24,9 +29,16 @@ public class Solution {
         for (Move move : moves) {
             direction = Direction.rotate(direction, move.direction);
             position = Point.add(position, Point.multiply(steps.get(direction), move.steps));
+            //direction = direction.rotate(move.direction);
             //position = position.add(steps.get(direction).multiply(move.steps));
         }
 
+        /*Point res = moves
+                .stream()
+                .collect(
+
+                );
+*/
         System.out.println("Part 1");
         System.out.println("Point: " + position.x + ", " + position.y);
         System.out.println("Distance: " + (Math.abs(position.x) + Math.abs(position.y)));
@@ -43,6 +55,7 @@ public class Solution {
         OUTER_LOOP:
         for (Move move : moves) {
             direction = Direction.rotate(direction, move.direction);
+            //direction = direction.rotate(move.direction);
             for (int s = 0; s < move.steps; s++) {
                 position = Point.add(position, steps.get(direction));
                 //position = position.add(steps.get(direction));
