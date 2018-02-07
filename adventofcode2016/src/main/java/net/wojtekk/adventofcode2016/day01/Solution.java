@@ -49,21 +49,25 @@ public class Solution {
     List<Point> positions = new LinkedList<>();
     positions.add(position);
 
-    OUTER_LOOP:
+    position = findCollision(direction, position, moves, positions);
+
+    System.out.println("Part 2");
+    System.out.println("Point: " + position.x + ", " + position.y);
+    System.out.println("Distance: " + (Math.abs(position.x) + Math.abs(position.y)));
+  }
+
+  public Point findCollision(Direction direction, Point position, List<Move> moves, List<Point> positions) {
     for (Move move : moves) {
       direction = direction.rotate(move.direction);
       for (int s = 0; s < move.steps; s++) {
         position = position.add(steps.get(direction));
         if (positions.contains(position)) {
-          break OUTER_LOOP;
+          return position;
         }
         positions.add(position);
       }
     }
-
-    System.out.println("Part 2");
-    System.out.println("Point: " + position.x + ", " + position.y);
-    System.out.println("Distance: " + (Math.abs(position.x) + Math.abs(position.y)));
+    return position;
   }
 
   private List<Move> getMoves(String fileName) throws IOException {
