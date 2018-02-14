@@ -22,12 +22,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="adventofcode2016" />
         <module name="javamasterclass" />
+        <module name="rx2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="adventofcode2016" target="1.9" />
       <module name="javalearning" target="1.9" />
       <module name="javamasterclass" target="1.9" />
+      <module name="rx2" target="1.9" />
     </bytecodeTargetLevel>
   </component>
   <component name="ComposerJsonPluginSettings">
@@ -243,6 +245,7 @@
       <module fileurl="file://$PROJECT_DIR$/adventofcode2016/adventofcode2016.iml" filepath="$PROJECT_DIR$/adventofcode2016/adventofcode2016.iml" />
       <module fileurl="file://$PROJECT_DIR$/javalearning.iml" filepath="$PROJECT_DIR$/javalearning.iml" />
       <module fileurl="file://$PROJECT_DIR$/javamasterclass/javamasterclass.iml" filepath="$PROJECT_DIR$/javamasterclass/javamasterclass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rx2/rx2.iml" filepath="$PROJECT_DIR$/rx2/rx2.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" default="false" project-jdk-name="9.0" project-jdk-type="JavaSDK">
@@ -360,6 +363,17 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
   <component name="libraryTable">
+    <library name="Maven: io.reactivex.rxjava2:rxjava:2.1.9">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/io/reactivex/rxjava2/rxjava/2.1.9/rxjava-2.1.9.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/io/reactivex/rxjava2/rxjava/2.1.9/rxjava-2.1.9-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/io/reactivex/rxjava2/rxjava/2.1.9/rxjava-2.1.9-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: junit:junit:4.12">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/" />
@@ -424,6 +438,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/opentest4j/opentest4j/1.0.0/opentest4j-1.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.reactivestreams:reactive-streams:1.0.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/reactivestreams/reactive-streams/1.0.2/reactive-streams-1.0.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/reactivestreams/reactive-streams/1.0.2/reactive-streams-1.0.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/reactivestreams/reactive-streams/1.0.2/reactive-streams-1.0.2-sources.jar!/" />
       </SOURCES>
     </library>
   </component>
