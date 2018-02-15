@@ -90,5 +90,19 @@ public class Main {
         }
       )
       .blockingSubscribe(System.out::println);
+
+    System.out.println("\n\nCase 7 - Flowable.timer\n");
+
+    Flowable.range(1, 10)
+      .flatMap(v -> {
+          System.out.print(".");
+          return Flowable.timer(1000 - v * 100, TimeUnit.MILLISECONDS)
+            .map(s -> {
+              System.out.println("o");
+              return v;
+            });
+        }
+      )
+      .blockingSubscribe(System.out::println);
   }
 }
